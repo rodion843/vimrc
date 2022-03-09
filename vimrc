@@ -29,3 +29,6 @@ set ignorecase
 set smartcase
 
 set clipboard=unnamedplus
+
+set undofile
+set undodir=~/.vim/undo
