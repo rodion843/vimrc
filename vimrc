@@ -32,3 +32,5 @@ set clipboard=unnamedplus
 
 set undofile
 set undodir=~/.vim/undo
+
+nnoremap <c-z> <nop>
