@@ -95,6 +95,8 @@ set undodir=~/.vim/undo
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set nowrapscan
 
+set so=5
+
 let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_max_num_candidates = 10
 let g:ycm_enable_semantic_highlighting = 1
@@ -105,6 +107,7 @@ let g:ycm_clangd_uses_ycmd_caching = 0
 " Use installed clangd, not YCM-bundled clangd which doesn't get updates.
 let g:ycm_clangd_binary_path = exepath("clangd")
 let g:ycm_global_ycm_extra_conf = "/home/rodion/git/.ycm_extra_conf.py"
+let g:ycm_clangd_args=['--header-insertion=never']
 
 set completeopt-=preview
 
@@ -129,6 +132,10 @@ if &term =~ '^screen'
     execute "set <xLeft>=\e[1;*D"
 endif
 
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+
+set cindent           " enable specific indenting for C code
+set cino+=j1,(0,ws,Ws " enable partial c++11 (lambda) support
 
 "augroup highlight_current_word
 "  au!
